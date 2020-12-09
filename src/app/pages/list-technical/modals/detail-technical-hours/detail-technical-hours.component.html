@@ -16,7 +16,7 @@
                     </div>
                 </div>
                 <div fxLayoutAlign="flex-end">
-                    <button mat-raised-button color="primary" (click)="calculationHours()" class="button-space">Consultar</button>
+                    <button mat-raised-button color="primary" (click)="calculationHours()"  [disabled]="technicalDetailFrom.invalid " class="button-space">Consultar</button>
                 </div>
             </form>
         </mat-card-content>

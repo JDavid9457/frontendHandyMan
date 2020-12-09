@@ -44,7 +44,7 @@
             </div>
             <div fxLayoutAlign="flex-end">
                 <button mat-raised-button color="primary" type="submit" (click)="save()"
-                    class="button-space">Guardar</button>
+                [disabled]="technicalFrom.invalid "class="button-space">Guardar</button>
                 <button mat-raised-button color="warn" (click)="onClickClose()" class="button-space">Cancelar</button>
             </div>
         </form>
