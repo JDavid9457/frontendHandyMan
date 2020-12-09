@@ -88,7 +88,7 @@ export class CreateTechnicalComponent implements OnInit {
 
 
   /**
-   * 6
+   * 
    */
   getDateweek(date: Date): number {
     const time = new Date(date);
@@ -100,7 +100,7 @@ export class CreateTechnicalComponent implements OnInit {
   }
 
   /**
-   * 5
+   * 
    */
   private getTypeHorus(hour: number, day: number): string {
 
@@ -117,7 +117,7 @@ export class CreateTechnicalComponent implements OnInit {
 
 
   /**
-   * 7
+   * 
    * @param startH 
    * @param endH 
    * @param day 
@@ -235,7 +235,7 @@ export class CreateTechnicalComponent implements OnInit {
 
 
   /**
-   * 1
+   * 
    *
    */
   private calculateByService(startDate: Date, endDate: Date): void {
@@ -261,7 +261,7 @@ export class CreateTechnicalComponent implements OnInit {
   }
 
   /**
-    * 
+    * permite cerrar la ventana del dialog
     */
   onClickClose(): void {
     this.dialogRf.close();
