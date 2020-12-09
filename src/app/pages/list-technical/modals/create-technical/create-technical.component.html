@@ -22,7 +22,7 @@
                     <mat-form-field>
                         <mat-label>Fecha de Inicio </mat-label>
                         <input matInput formControlName="wordStartDate" [ngxMatDatetimePicker]="pickerFromStartDate"
-                            placeholder="From date & time">
+                            placeholder="Ingresar la fecha inicial y hora">
                         <mat-datepicker-toggle matSuffix [for]="pickerFromStartDate"></mat-datepicker-toggle>
                         <ngx-mat-datetime-picker #pickerFromStartDate enableMeridian="true"></ngx-mat-datetime-picker>
                     </mat-form-field>
@@ -31,7 +31,7 @@
                     <mat-form-field>
                         <mat-label>Fecha final</mat-label>
                         <input matInput formControlName="wordEndDate" [ngxMatDatetimePicker]="pickerFromEndDate"
-                            placeholder="From date & time">
+                            placeholder="Ingresar la fecha final y hora">
                         <mat-datepicker-toggle matSuffix [for]="pickerFromEndDate"></mat-datepicker-toggle>
                         <ngx-mat-datetime-picker #pickerFromEndDate enableMeridian="true"></ngx-mat-datetime-picker>
                         <mat-error *ngIf="technicalFrom.controls.wordEndDate.hasError('required')">Campo obligatorio
