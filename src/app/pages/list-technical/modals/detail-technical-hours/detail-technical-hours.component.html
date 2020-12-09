@@ -1,0 +1,53 @@
+<div>
+    <mat-card>
+        <mat-card-content>
+            <mat-card-title>Calcular horas trabajadas</mat-card-title>
+            <form [formGroup]="technicalDetailFrom">
+                <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="20px" fxLayoutGap.lt-md="0px">
+                    <div fxFlex="100" fxFlex.lt-md="100" fxLayout="column">
+                        <mat-form-field>
+                            <mat-label>Identificación</mat-label>
+                            <input matInput  placeholder="Identificación" formControlName="wordIdentifyTechnical"required>
+                        </mat-form-field>
+                        <mat-form-field>
+                            <mat-label>Servicio</mat-label>
+                            <input matInput type="text" placeholder=" Ingrese el número Semana " formControlName="wordNumberWeek" required>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div fxLayoutAlign="flex-end">
+                    <button mat-raised-button color="primary" (click)="calculationHours()" class="button-space">Consultar</button>
+                </div>
+            </form>
+        </mat-card-content>
+    </mat-card>
+
+</div>
+<br>
+<div>
+    <mat-card *ngIf="techinialDetail">
+        <mat-card-content>
+            <div fxFLex="50%">
+                <h1>Horas </h1>
+                <h4>Identificación del téncico: {{techinialDetail.identifyTechnical}}</h4>
+                <h4>Número de la semana: {{techinialDetail.numberWeek}}</h4>
+                <hr>
+            </div>
+            <div fxLayout="row">
+                <h4 fxFLex="25%" class="space">Horas al Día: {{techinialDetail.dayByHour}}</h4>
+                <h4 fxFLex="25%" class="space">Horas en la Noche: {{techinialDetail.nigthByHour}}</h4>
+                <h4 fxFLex="25%" class="space">Horas Dominicales: {{techinialDetail.sundayByHour}}</h4>
+                
+            </div>
+            <hr>
+            <div fxLayout="row">
+                <h4 fxFLex="25%" class="space">Horas al Día extra: {{techinialDetail.exDayByHour}}</h4>
+                <h4 fxFLex="25%" class="space">Horas en la Noche extra:{{techinialDetail.exNightByHour}}</h4>
+                <h4 fxFLex="25%" class="space">Horas Dominicales extra:{{techinialDetail.exSundayByHour}}</h4>
+            </div>
+        </mat-card-content>
+    </mat-card>
+    <div fxLayoutAlign="flex-end">
+        <button mat-raised-button color="warn" (click)="onClickClose()" class="button-space">Cancelar</button>
+    </div>
+</div>

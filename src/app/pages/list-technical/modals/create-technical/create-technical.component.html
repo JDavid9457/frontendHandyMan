@@ -1,0 +1,52 @@
+<mat-card>
+    <mat-card-content>
+        <form [formGroup]="technicalFrom">
+            <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="20px" fxLayoutGap.lt-md="0px">
+                <div fxFlex="50" fxFlex.lt-md="100" fxLayout="column">
+                    <mat-form-field>
+                        <mat-label>Identificación del técnico </mat-label>
+                        <input matInput type="text" placeholder="Identificación del técnico "
+                            formControlName="wordIdentifyTechnical" required>
+                    </mat-form-field>
+                </div>
+                <div fxFlex="50" fxFlex.lt-md="100" fxLayout="column">
+                    <mat-form-field>
+                        <mat-label>Identificación del servicio</mat-label>
+                        <input matInput type="text" placeholder="Identificación del servicio"
+                            formControlName="wordIdentifyService" required>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="20px" fxLayoutGap.lt-md="0px">
+                <div fxFlex="50" fxFlex.lt-md="100" fxLayout="column">
+                    <mat-form-field>
+                        <mat-label>Fecha de Inicio </mat-label>
+                        <input matInput formControlName="wordStartDate" [ngxMatDatetimePicker]="pickerFromStartDate"
+                            placeholder="From date & time">
+                        <mat-datepicker-toggle matSuffix [for]="pickerFromStartDate"></mat-datepicker-toggle>
+                        <ngx-mat-datetime-picker #pickerFromStartDate enableMeridian="true"></ngx-mat-datetime-picker>
+                    </mat-form-field>
+                </div>
+                <div fxFlex="50" fxFlex.lt-md="100" fxLayout="column">
+                    <mat-form-field>
+                        <mat-label>Fecha final</mat-label>
+                        <input matInput formControlName="wordEndDate" [ngxMatDatetimePicker]="pickerFromEndDate"
+                            placeholder="From date & time">
+                        <mat-datepicker-toggle matSuffix [for]="pickerFromEndDate"></mat-datepicker-toggle>
+                        <ngx-mat-datetime-picker #pickerFromEndDate enableMeridian="true"></ngx-mat-datetime-picker>
+                        <mat-error *ngIf="technicalFrom.controls.wordEndDate.hasError('required')">Campo obligatorio
+                        </mat-error>
+                        <mat-error *ngIf="technicalFrom.controls.wordEndDate.hasError('oldDate')">La Fecha final debe
+                            ser
+                            mayor a la fecha inicial</mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div fxLayoutAlign="flex-end">
+                <button mat-raised-button color="primary" type="submit" (click)="save()"
+                    class="button-space">Guardar</button>
+                <button mat-raised-button color="warn" (click)="onClickClose()" class="button-space">Cancelar</button>
+            </div>
+        </form>
+    </mat-card-content>
+</mat-card>
